@@ -2,8 +2,9 @@ SHELL := /bin/bash
 
 cr := cargo run --quiet
 cbr := cargo build --quiet
+ct := cargo test --quiet
 
-.PHONY: hello ba01 ba02
+.PHONY: hello ba01 ba02 ba03 ba04
 
 hello:
 	@$(cr) -p hello
@@ -91,3 +92,29 @@ ba02:
 	@echo "a\tb\nc" && \
 	printf "a\tb\nc" | target/debug/ba02 && \
 	echo
+
+ba03:
+	@$(cbr) -p ba03
+
+	@echo "a b c" && \
+	./target/debug/ba03 a b c && \
+	echo
+
+	@echo "e d c b a" && \
+	./target/debug/ba03 e d c b a && \
+	echo
+
+	@echo "A a A a A a" && \
+	./target/debug/ba03 A a A a A a && \
+	echo
+
+	@echo "hello, world, this is a program" && \
+	./target/debug/ba03 hello, world, this is a program && \
+	echo
+
+	@echo "empty" && \
+	./target/debug/ba03 && \
+	echo
+
+ba04:
+	@$(ct) -p ba04
