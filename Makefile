@@ -4,7 +4,7 @@ cr := cargo run --quiet
 cbr := cargo build --quiet
 ct := cargo test --quiet
 
-.PHONY: hello ba01 ba02 ba03 ba04
+.PHONY: hello ba01 ba02 ba03 ba04 hello_pixels
 
 hello:
 	@$(cr) -p hello
@@ -118,3 +118,6 @@ ba03:
 
 ba04:
 	@$(ct) -p ba04
+
+hello_pixels:
+	@$(cr) -p hello_pixels

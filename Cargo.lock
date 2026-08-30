@@ -21,3 +21,7 @@ version = "0.1.0"
 [[package]]
 name = "hello"
 version = "0.1.0"
+
+[[package]]
+name = "hello_pixels"
+version = "0.1.0"
