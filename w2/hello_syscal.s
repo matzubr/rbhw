@@ -1,4 +1,4 @@
-.section .rodata
+.rodata
 hello:
   .string "Hello, World!\n"
 hello_end:
