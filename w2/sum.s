@@ -5,9 +5,7 @@ out:
 .text
 .globl main
 main:
-  # stack aling
-  pushq %rbp
-  movq %rsp, %rbp
+  subq $8, %rsp # alingment, without rbp cuz we dont need it
 
   # First attempt
   movq $10, %rdi
@@ -15,18 +13,20 @@ main:
   movq %rdi, %rax
   addq %rsi, %rax
 
-  # Can we use just constants? (yes)
+  # Can we use just constants? without other registers?
+  # YES
   # movq $10, %rax
   # addq $30, %rax
 
+  # movq $(10+20), %rax # another way to combine nums
+
   leaq out(%rip), %rdi
   movq %rax, %rsi
-  movb $0, %al
+  xorl %eax, %eax
   call printf
 
-  movq %rbp, %rsp
-  popq %rbp
   xorl %eax, %eax
+  addq $8, %rsp
   ret
 
 .section .note.GNU-stack

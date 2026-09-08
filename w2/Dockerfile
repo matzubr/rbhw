@@ -5,6 +5,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   binutils \
   gdb \
   file \
-  && rm -rf /var/lib/apt/lists/*
+  watch
+
+RUN echo "alias ll='ls -lah'" >> /root/.bashrc
 
 WORKDIR /hw

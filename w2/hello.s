@@ -5,26 +5,17 @@ hello:
 .text
 .globl main
 main:
-  # aling stack for call
-  pushq %rbp
-  movq %rsp, %rbp
+  pushq %rbp # rbp is callee saved so we save it + aling stack due to _start_main call from libc
+  movq %rsp, %rbp # move stack pointer on the base
 
-  # set first arg as an address of string
-  leaq hello(%rip), %rdi
+  leaq hello(%rip), %rdi # due to RIP relative instructions, we save (rip + hello) offset to rdi
 
-  # the only diff between printf and puts that
-  # put \n at the end of the stirng automatic
-  # call puts
-  movb $0, %al
+  xorl %eax, %eax # al register need to be set to 0 to skip allocating XMM registers
   call printf
+  xorl %eax, %eax # printf write number of bytes that hes print to RAX + set exit code to 0
 
-  # epilog
-  movq %rbp, %rsp
-  popq %rbp
-  
-  # set exit code 0
-  # movq $0, %rax
-  xorl %eax, %eax
+  movq %rbp, %rsp # return pointer to base
+  popq %rbp # callee save register need to be returned
   ret
 
 .section .note.GNU-stack
