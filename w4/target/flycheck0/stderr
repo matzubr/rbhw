@@ -1,0 +1,122 @@
+   0.354727541s  INFO prepare_target{force=false package_id=hw v0.1.0 (/Users/mzub/Documents/video/rust_base/rbhw/w4) target="hw"}: cargo::core::compiler::fingerprint: fingerprint error for hw v0.1.0 (/Users/mzub/Documents/video/rust_base/rbhw/w4)/Check { test: false }/TargetInner { name_inferred: true, ..: lib_target("hw", ["lib"], "/Users/mzub/Documents/video/rust_base/rbhw/w4/src/lib.rs", Edition2024) }
+   0.355237875s  INFO prepare_target{force=false package_id=hw v0.1.0 (/Users/mzub/Documents/video/rust_base/rbhw/w4) target="hw"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mzub/Documents/video/rust_base/rbhw/w4/target/debug/.fingerprint/hw-7a802ab5d98890e8/lib-hw`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: <std::backtrace::Backtrace>::create
+   1: <std::backtrace::Backtrace>::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+   0.374839708s  INFO prepare_target{force=false package_id=hw v0.1.0 (/Users/mzub/Documents/video/rust_base/rbhw/w4) target="hw"}: cargo::core::compiler::fingerprint: fingerprint error for hw v0.1.0 (/Users/mzub/Documents/video/rust_base/rbhw/w4)/Check { test: true }/TargetInner { name_inferred: true, ..: lib_target("hw", ["lib"], "/Users/mzub/Documents/video/rust_base/rbhw/w4/src/lib.rs", Edition2024) }
+   0.374864125s  INFO prepare_target{force=false package_id=hw v0.1.0 (/Users/mzub/Documents/video/rust_base/rbhw/w4) target="hw"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mzub/Documents/video/rust_base/rbhw/w4/target/debug/.fingerprint/hw-9ffee8f9bb9a6e75/test-lib-hw`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: <std::backtrace::Backtrace>::create
+   1: <std::backtrace::Backtrace>::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+   0.375208208s  INFO prepare_target{force=false package_id=hw v0.1.0 (/Users/mzub/Documents/video/rust_base/rbhw/w4) target="hw"}: cargo::core::compiler::fingerprint: fingerprint error for hw v0.1.0 (/Users/mzub/Documents/video/rust_base/rbhw/w4)/Check { test: false }/TargetInner { name: "hw", doc: true, ..: with_path("/Users/mzub/Documents/video/rust_base/rbhw/w4/src/main.rs", Edition2024) }
+   0.375216750s  INFO prepare_target{force=false package_id=hw v0.1.0 (/Users/mzub/Documents/video/rust_base/rbhw/w4) target="hw"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mzub/Documents/video/rust_base/rbhw/w4/target/debug/.fingerprint/hw-b2828da8c4c68fd3/bin-hw`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: <std::backtrace::Backtrace>::create
+   1: <std::backtrace::Backtrace>::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+   0.375718208s  INFO prepare_target{force=false package_id=hw v0.1.0 (/Users/mzub/Documents/video/rust_base/rbhw/w4) target="hw"}: cargo::core::compiler::fingerprint: fingerprint error for hw v0.1.0 (/Users/mzub/Documents/video/rust_base/rbhw/w4)/Check { test: true }/TargetInner { name: "hw", doc: true, ..: with_path("/Users/mzub/Documents/video/rust_base/rbhw/w4/src/main.rs", Edition2024) }
+   0.375725375s  INFO prepare_target{force=false package_id=hw v0.1.0 (/Users/mzub/Documents/video/rust_base/rbhw/w4) target="hw"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mzub/Documents/video/rust_base/rbhw/w4/target/debug/.fingerprint/hw-1ff1811455fad4ea/test-bin-hw`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: <std::backtrace::Backtrace>::create
+   1: <std::backtrace::Backtrace>::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+   0.376047833s  INFO prepare_target{force=false package_id=hw v0.1.0 (/Users/mzub/Documents/video/rust_base/rbhw/w4) target="io_tests"}: cargo::core::compiler::fingerprint: fingerprint error for hw v0.1.0 (/Users/mzub/Documents/video/rust_base/rbhw/w4)/Check { test: true }/TargetInner { kind: "test", name: "io_tests", benched: false, ..: with_path("/Users/mzub/Documents/video/rust_base/rbhw/w4/tests/io_tests.rs", Edition2024) }
+   0.376063833s  INFO prepare_target{force=false package_id=hw v0.1.0 (/Users/mzub/Documents/video/rust_base/rbhw/w4) target="io_tests"}: cargo::core::compiler::fingerprint:     err: failed to read `/Users/mzub/Documents/video/rust_base/rbhw/w4/target/debug/.fingerprint/hw-b4d8c14a68c192a4/test-integration-test-io_tests`
+
+Caused by:
+    No such file or directory (os error 2)
+
+Stack backtrace:
+   0: <std::backtrace::Backtrace>::create
+   1: <std::backtrace::Backtrace>::capture
+   2: cargo_util::paths::read_bytes
+   3: cargo_util::paths::read
+   4: cargo::core::compiler::fingerprint::_compare_old_fingerprint
+   5: cargo::core::compiler::fingerprint::prepare_target
+   6: cargo::core::compiler::compile
+   7: <cargo::core::compiler::build_runner::BuildRunner>::compile
+   8: cargo::ops::cargo_compile::compile_with_exec
+   9: cargo::ops::cargo_compile::compile
+  10: cargo::commands::check::exec
+  11: <cargo::cli::Exec>::exec
+  12: cargo::main
+  13: std::sys::backtrace::__rust_begin_short_backtrace::<fn(), ()>
+  14: std::rt::lang_start::<()>::{closure#0}
+  15: std::rt::lang_start_internal
+  16: _main
+    Checking hw v0.1.0 (/Users/mzub/Documents/video/rust_base/rbhw/w4)
+    Finished `dev` profile [unoptimized + debuginfo] target(s) in 0.64s
