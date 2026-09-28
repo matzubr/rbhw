@@ -22,6 +22,10 @@ pub struct ToyMMU {
     current_privilege: PrivilegeLevel,
 }
 
+const MASK_PRESENT: u8 = 0b0000_0001;
+const MASK_WRITE: u8 = 0b0000_0010;
+const MASK_USER: u8 = 0b0000_0100;
+
 impl ToyMMU {
     pub fn new(page_table: [u8; 8], privilege: PrivilegeLevel) -> Self {
         Self {
@@ -36,8 +40,37 @@ impl ToyMMU {
     /// * `va` - 6-битный виртуальный адрес
     /// * `is_write` - флаг, указывающий, является ли операция записью (true) или чтением (false)
     pub fn translate(&self, va: u8, is_write: bool) -> Result<u8, MemoryError> {
-        // TODO: Реализовать логику трансляции и проверок флагов
-        unimplemented!()
+        if va > 63 {
+            return Err(MemoryError::InvalidAddress);
+        }
+        // 16 = 010_000
+        // 11 = 001_011
+        let offset = va & 0b111;
+        let index = va >> 3 & 0b111;
+        dbg!(offset);
+        dbg!(index);
+
+        let page = self.page_table[index as usize];
+        println!("Check present flag");
+        let present_flag: bool = page & MASK_PRESENT != 0;
+        if !present_flag {
+            return Err(MemoryError::PageNotPresent);
+        }
+        println!("Check level privilege");
+        let level = self.current_privilege;
+        let user_flag: bool = page & MASK_USER != 0;
+        if level == PrivilegeLevel::Ring3 && !user_flag {
+            return Err(MemoryError::PrivilegeViolation);
+        }
+        println!("Check write flag");
+        let write_flag: bool = page & MASK_WRITE != 0;
+        if is_write && !write_flag {
+            return Err(MemoryError::WriteProtected);
+        }
+        let pa = page & 0b111_000 | offset;
+        dbg!(pa);
+        println!("{pa:08b}");
+        Ok(pa)
     }
 }
 
